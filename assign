@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme Switcher Web Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        #themeBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body id="page">
+
+    <h1>Theme Switcher Web Page</h1>
+
+    <p>This page demonstrates dynamic manipulation of HTML and CSS using JavaScript.</p>
+
+    <button id="themeBtn">Change Theme</button>
+
+    <h3 id="modeText">Light Mode</h3>
+
+    <script>
+        let isDark = false; // Tracks the current theme
+
+        document.getElementById("themeBtn").addEventListener("click", function () {
+            let page = document.getElementById("page");
+            let modeText = document.getElementById("modeText");
+
+            if (isDark) {
+                // Switch to Light Theme
+                page.style.backgroundColor = "white";
+                page.style.color = "black";
+                page.style.fontFamily = "Arial";
+                modeText.textContent = "Light Mode";
+                isDark = false;
+            } else {
+                // Switch to Dark Theme
+                page.style.backgroundColor = "black";
+                page.style.color = "white";
+                page.style.fontFamily = "Courier New";
+                modeText.textContent = "Dark Mode";
+                isDark = true;
+            }
+        });
+    </script>
+
+</body>
+</html>
